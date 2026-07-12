@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema IA Notas de Crédito Tributarias</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>🤖 Sistema IA de Notas de Crédito Tributarias</h1>
+    <p>Ingreso asistido, RAG simulado, análisis de riesgo, precio sugerido y negociación con aprobación humana</p>
+  </header>
+
+  <main class="container">
+    <section class="card" id="loginBox">
+      <h2>Inicio de sesión</h2>
+      <div class="grid-2">
+        <input id="usuario" placeholder="Usuario: admin / operador / cliente" />
+        <input id="clave" type="password" placeholder="Clave: 123" />
+      </div>
+      <button onclick="login()">Ingresar</button>
+      <p id="loginMsg" class="msg"></p>
+    </section>
+
+    <section class="card hidden" id="panelBox">
+      <div class="session">
+        <span><b>Usuario:</b> <span id="usuarioActivo"></span></span>
+        <span><b>Rol:</b> <span id="rolActivo"></span></span>
+      </div>
+
+      <h2>1. Registro de nota</h2>
+      <div class="grid-3">
+        <input id="titular" placeholder="Titular" />
+        <input id="ruc" placeholder="RUC o identificación" />
+        <input id="numeroTitulo" placeholder="Número de título" />
+        <input id="tipoNota" placeholder="Tipo de nota" />
+        <input id="valorNominal" type="number" placeholder="Valor nominal" />
+        <input id="saldoDisponible" type="number" placeholder="Saldo disponible" />
+        <input id="deudaCliente" type="number" placeholder="Deuda del cliente" />
+        <input id="documento" type="file" accept=".pdf,.jpg,.jpeg,.png" />
+      </div>
+      <textarea id="observacion" placeholder="Observaciones iniciales"></textarea>
+      <button onclick="registrarNota()">Registrar nota</button>
+    </section>
+
+    <section class="card hidden" id="iaBox">
+      <h2>2. Agente IA</h2>
+      <input id="idNota" type="number" placeholder="ID de nota" />
+      <div class="actions">
+        <button onclick="buscarAntecedentes()">🔎 Buscar antecedentes IA</button>
+        <button onclick="analizarIA()">🧠 Analizar con IA</button>
+        <button onclick="aprobarAccion()">✅ Aprobar / editar acción</button>
+        <button onclick="generarFicha()">📄 Generar ficha IA</button>
+        <button onclick="consultarExpediente()">📁 Consultar expediente</button>
+      </div>
+    </section>
+
+    <section class="card hidden" id="chatBox">
+      <h2>3. Chat con agente IA</h2>
+      <div class="grid-2">
+        <input id="preguntaAgente" placeholder="Ej.: ¿Qué falta corregir? ¿Cuál es el riesgo? ¿Puede negociarse?" />
+        <button onclick="preguntarAgente()">Preguntar</button>
+      </div>
+    </section>
+
+    <section class="card hidden" id="mercadoBox">
+      <h2>4. Mercado y negociación simulada</h2>
+      <input id="precioVenta" type="number" placeholder="Precio de venta" />
+      <div class="actions">
+        <button onclick="publicarMercado()">Publicar nota</button>
+        <button onclick="verMercado()">Ver mercado</button>
+        <button onclick="solicitarCompra()">Solicitar compra</button>
+        <button onclick="avanzarNegociacion()">Avanzar negociación</button>
+        <button onclick="cerrarNegociacion()">Cerrar simulación</button>
+      </div>
+      <p class="warning">⚠️ Las acciones reguladas quedan como propuesta o solicitud de aprobación. No se ejecuta liquidación, transferencia ni endoso real.</p>
+    </section>
+
+    <section class="card hidden" id="dashboardBox">
+      <h2>5. Dashboard IA</h2>
+      <button onclick="verDashboard()">Actualizar dashboard</button>
+      <div id="dashboard" class="dashboard"></div>
+    </section>
+
+    <section class="card hidden" id="resultadoBox">
+      <h2>Resultado</h2>
+      <pre id="resultado"></pre>
+    </section>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

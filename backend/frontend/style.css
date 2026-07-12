@@ -1,0 +1,97 @@
+* { box-sizing: border-box; }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #eef3fb;
+  color: #1f2937;
+}
+.hero {
+  background: linear-gradient(135deg, #0f172a, #1d4ed8);
+  color: white;
+  text-align: center;
+  padding: 34px 16px;
+}
+.hero h1 { margin: 0 0 8px; }
+.container {
+  max-width: 1150px;
+  margin: 24px auto;
+  padding: 0 14px;
+}
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.10);
+}
+.hidden { display: none; }
+.grid-2, .grid-3 {
+  display: grid;
+  gap: 10px;
+}
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  margin: 6px 0;
+}
+textarea { min-height: 88px; resize: vertical; }
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 11px 16px;
+  margin: 6px 5px 6px 0;
+  background: #16a34a;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+button:hover { background: #15803d; }
+.actions { margin-top: 8px; }
+.session {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  background: #eff6ff;
+  border-left: 5px solid #2563eb;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+}
+.warning {
+  background: #fff7ed;
+  border-left: 5px solid #f97316;
+  padding: 12px;
+  border-radius: 10px;
+}
+.msg { color: #dc2626; font-weight: bold; }
+pre {
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 16px;
+  border-radius: 12px;
+  overflow-x: auto;
+  min-height: 120px;
+  white-space: pre-wrap;
+}
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+.metric {
+  background: #f8fafc;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+}
+.metric b {
+  display: block;
+  font-size: 26px;
+  color: #1d4ed8;
+}
